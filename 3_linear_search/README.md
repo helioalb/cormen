@@ -1,1 +1,1 @@
-![linear_search](https://user-images.githubusercontent.com/349951/27198365-44c568ec-51e8-11e7-9a5c-0a9c9413d697.jpg)
+![linearsearch](https://user-images.githubusercontent.com/349951/27198897-7f57e168-51ea-11e7-8922-fe636e8dd8c0.png)

@@ -1,6 +1,8 @@
-Complexity 0(n^2)
-Type: incremental
-in place
+Complexity **0(n^2)**
+
+Type: **incremental**
+
+**in place**
 
 Pseudocode
 

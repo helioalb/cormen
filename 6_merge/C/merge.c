@@ -2,13 +2,11 @@
 #include<stdlib.h>
 
 void merge(int* A, int p, int q, int r) {
-    int n1 = q - p + 1;
-    int n2 = r - q;
-    int n3 = n1 + n2;
+    int n = r - p + 1;
     int i = p;
     int j = q + 1;
     int k = 0;
-    int* B = calloc(n3, sizeof (int));
+    int* B = calloc(n, sizeof (int));
 
     while (i <= q && j <= r)
         if (A[i] < A[j])
@@ -16,13 +14,13 @@ void merge(int* A, int p, int q, int r) {
         else
             B[k++] = A[j++];
 
-    while (k < n3)
+    while (k < n)
         if (i > q)
             B[k++] = A[j++];
         else
             B[k++] = A[i++];
 
-    for (i = 0; i < n3; i++)
+    for (i = 0; i < n; i++)
         A[p++] = B[i];
 }
 

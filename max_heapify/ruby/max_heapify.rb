@@ -2,8 +2,8 @@ def max_heapify(heap, wrong_element)
   left = 2 * wrong_element + 1
   right = 2 * wrong_element + 2
 
-  greater = (left <= heap.length && heap[left] > heap[wrong_element]) ? left : wrong_element
-  greater = right if right <= heap.length && heap[right] > heap[greater]
+  greater = (left < heap.length && heap[left] > heap[wrong_element]) ? left : wrong_element
+  greater = right if right < heap.length && heap[right] > heap[greater]
 
   return if greater == wrong_element
 

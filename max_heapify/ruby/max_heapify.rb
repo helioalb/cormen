@@ -1,21 +1,25 @@
-def max_heapify(heap, wrong_element)
+def swap(heap, first, second)
+  tmp = heap[first]
+  heap[first] = heap[second]
+  heap[second] = tmp
+end
+
+def max_heapify(heap, heap_size, wrong_element)
   left = 2 * wrong_element + 1
   right = 2 * wrong_element + 2
 
-  greater = (left < heap.length && heap[left] > heap[wrong_element]) ? left : wrong_element
-  greater = right if right < heap.length && heap[right] > heap[greater]
+  greater = (left < heap_size && heap[left] > heap[wrong_element]) ? left : wrong_element
+  greater = right if right < heap_size && heap[right] > heap[greater]
 
   return if greater == wrong_element
 
-  tmp = heap[wrong_element]
-  heap[wrong_element] = heap[greater]
-  heap[greater] = tmp
-  max_heapify(heap, greater)
+  swap(heap, wrong_element, greater)
+  max_heapify(heap, heap_size, greater)
 end
 
 heap = [8, 18, 14, 17, 12, 13, 11, 15, 16]
 
-max_heapify(heap, 0)
+max_heapify(heap, heap.size, 0)
 
 puts heap
 

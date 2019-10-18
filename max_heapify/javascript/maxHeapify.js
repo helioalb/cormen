@@ -1,27 +1,31 @@
-const maxHeapify = (A, i) => {
+const swap = (A, a, b) => {
+  const tmp = A[a];
+  A[a] = A[b];
+  A[b] = tmp;
+};
+
+const maxHeapify = (A, m, i) => {
   const left = 2 * i + 1;
   const right = 2 * i + 2;
   let greater = i;
 
-  if (left < A.length && A[left] > A[i]) {
+  if (left < m && A[left] > A[i]) {
     greater = left
   }
 
-  if (right < A.length && A[right] > A[greater]) {
+  if (right < m && A[right] > A[greater]) {
     greater = right;
   }
 
   if (greater !== i) {
-    const tmp = A[i];
-    A[i] = A[greater];
-    A[greater] = tmp;
-    maxHeapify(A, greater);
+    swap(A, i, greater);
+    maxHeapify(A, m, greater);
   }
-}
+};
 
 const A = [8, 18, 14, 17, 12, 13, 11, 15, 16]
 
-maxHeapify(A, 0);
+maxHeapify(A, A.length, 0);
 
 console.log(A);
 

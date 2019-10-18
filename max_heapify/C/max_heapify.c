@@ -1,4 +1,9 @@
 #include<stdio.h>
+void swap(int* A, int a, int b) {
+  int tmp = A[a];
+  A[a] = A[b];
+  A[b] = tmp;
+}
 
 void max_heapify(int* A, int m, int i) {
   int left = 2 * i + 1;
@@ -14,10 +19,7 @@ void max_heapify(int* A, int m, int i) {
   }
 
   if (greater != i) {
-    int tmp = A[i];
-    A[i] = A[greater];
-    A[greater] = tmp;
-
+    swap(A, greater, i);
     max_heapify(A, m, greater);
   }
 }

@@ -14,14 +14,25 @@ const partition = (A, p, r) => {
     }
     j++;
   }
+
   swap(A, ++i, j);
+
+  return i;
 };
 
+let q;
 
 const A = [47, 22, 40, 56, 34, 42];
-partition(A, 0, 5);
+q = partition(A, 0, 5);
+console.log(q);
 console.log(A);
 
 const B = [22, 47, 40, 56, 34, 42];
-partition(B, 0, 5);
+q = partition(B, 0, 5);
+console.log(q);
 console.log(B);
+
+const C = [47, 22];
+q = partition(C, 0, 1);
+console.log(q);
+console.log(C);

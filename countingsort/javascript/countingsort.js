@@ -26,8 +26,8 @@ const countingsort = (A, k) => {
   return B;
 };
 
-const A = [4, 3, 4, 3, 1, 0, 3];
-const k = 4;
+const A = [9,8,7,6,5,4,3,2,1,0];
+const k = 9;
 
-const sorted = countingsort(A, 4);
+const sorted = countingsort(A, k);
 console.log(sorted);

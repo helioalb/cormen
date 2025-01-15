@@ -6,4 +6,18 @@ Type: **incremental**
 
 Pseudocode
 
-![insertion_sort](https://user-images.githubusercontent.com/349951/26922697-38e3bb5a-4c16-11e7-80b9-fecdc3fea51d.jpg)
+```mermaid
+flowchart TD
+  A[j = 1] --> B(i = j - 1)
+  B --> C("key = A[j]")
+  C --> D{i >= 0}
+  D --> |yes| E{"key < A[i]"}
+  E --> |yes| F("A[i+1] = A[i]<br>i = i - 1")
+  F --> D
+  D --> |no| G("A[i+1] = key")
+  E --> |no| G
+  G --> H(j = j + 1)
+  H --> I{"j < A.length"}
+  I --> |yes| B
+  I --> |no| K[end]
+```
